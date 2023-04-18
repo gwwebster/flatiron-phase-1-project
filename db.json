@@ -1,0 +1,44 @@
+{
+    "funds": [
+        {
+            "id": 1,
+            "name": "Vanguard 500 Index Fund: Admiral shares",
+            "symbol": "VFIAX",
+            "ER": 0.0004,
+            "MI": 3000,
+            "CAGR": 0.08
+        },
+        {
+            "id": 2,
+            "name": "Schwab SP 500 Index Fund",
+            "symbol": "SWPPX",
+            "ER": 0.0002,
+            "MI": 0,
+            "CAGR": 0.08
+        },
+        {
+            "id": 3,
+            "name": "Fidelity 500 Index Fund",
+            "symbol": "FXAIX",
+            "ER": 0.00015,
+            "MI": 0,
+            "CAGR": 0.08
+        },
+        {
+            "id": 4,
+            "name": "Fidelity Zero Large Cap Index",
+            "symbol": "FNILX",
+            "ER": 0.0,
+            "MI": 0,
+            "CAGR": 0.08
+        },
+        {
+            "id": 5,
+            "name": "T. Rowe Price Equity Index 500 Fund",
+            "symbol": "PREIX",
+            "ER": 0.0015,
+            "MI": 2500,
+            "CAGR": 0.08
+        }
+    ]
+}
