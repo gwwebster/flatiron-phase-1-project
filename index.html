@@ -14,6 +14,24 @@
         </header>
         <p id="description">This is a rough estimator for returns on investments in popular S&P 500 index funds.
             Calculations are based on a 40-year historical compound annual growth rate of 11.60%, adjusted to 8% to compensate for inflation.</p>
+        <div class="form">
+            <form>
+                <select id="fund_dropdown">
+                    <option value="VFIAX">Vanguard 500 Index Fund: Admiral shares</option>
+                    <option value="SWPPX">Schwab SP 500 Index Fund</option>
+                    <option value="FXAIX">Fidelity 500 Index Fund</option>
+                    <option value="FNILX">Fidelity Zero Large Cap Index</option>
+                    <option value="PREIX">T. Rowe Price Equity Index 500 Fund</option>
+                </select>
+                <p></p>
+                <label>Initial Investment:</label>
+                <input type="text" id="initial_investment" placeholder="Initial Investment">
+                <label>Term Length (Years):</label>
+                <input type="text" id="term_length" placeholder="Term Length in Years">
+                <input type="submit" value="Estimate">
+            </form>
+            <p>Estimated Value of Investment: <span id="estimation"></span></p>
+        </div>
         <script type="text/javascript" src="./index.js"></script>
     </body>
 </html>
