@@ -1,0 +1,8 @@
+* {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #e4e4e4;
+    justify-content: center;
+    text-align: center;
+}
