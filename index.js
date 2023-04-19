@@ -72,3 +72,31 @@ function handleMouse() {
 
 //light/dark mode
 lightDark.addEventListener('click', changeColor)
+
+function changeColor() {
+    (function(exports) {
+        let style = document.querySelector("head")
+        .appendChild(document.createElement("style"));
+
+        let styleSheet = document.styleSheets[document.styleSheets.length - 1];
+        styleSheet.insertRule("* {}", 0);
+        styleSheet.insertRule('.form {}', 1);
+        styleSheet.insertRule('select, button, input {}', 2);
+
+        exports.universal = styleSheet.cssRules;
+      }(window));
+    if (lightDark.querySelector('button').textContent === "Dark") {
+        window.universal[0].style.backgroundColor = 'black'
+        window.universal[0].style.color = 'white'
+        window.universal[1].style.border = '2px solid white'
+        window.universal[2].style.backgroundColor = '#DCDCDC'
+        window.universal[2].style.color = 'black'
+        lightDark.querySelector('button').textContent = "Light"
+    } else {
+        window.universal[0].style.backgroundColor = '#e4e4e4'
+        window.universal[0].style.color = 'black'
+        window.universal[1].style.border = '2px solid black'
+        window.universal[2].style.backgroundColor = '#e4e4e4'
+        lightDark.querySelector('button').textContent = "Dark"
+    }
+};
