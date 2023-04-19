@@ -19,3 +19,12 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.form {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
