@@ -69,3 +69,6 @@ function handleMouse() {
     })
 
 };
+
+//light/dark mode
+lightDark.addEventListener('click', changeColor)
