@@ -28,3 +28,17 @@ function handleFetch() {
         })
     })
 };
+
+// estimate return
+function estimateReturn(eR, mI, aGR, fundName) {
+    let initialInv = Number(form.querySelector('#initial_investment').value)
+    let term = Number(form.querySelector('#term_length').value)
+    if (initialInv < mI) {
+        alert(`Initial investment less than minimum investment of ${mI} for the selected fund. Please try again.`)
+    } else {
+        let grossReturn = initialInv + (initialInv * (((1 + aGR)**term) - 1))
+        let totalReturn = Math.floor(grossReturn - ((initialInv * eR) * term))
+        renderEstimate(totalReturn)
+        handleLogRender(totalReturn, term, initialInv, eR, fundName)
+    }
+};
