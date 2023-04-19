@@ -50,3 +50,13 @@ label {
 #estimation {
     margin-left: 6.4%;
 }
+
+ul {
+    margin-left: 22%;
+    text-align: left;
+    list-style: none;
+}
+
+li {
+    margin-top: 5%;
+}
