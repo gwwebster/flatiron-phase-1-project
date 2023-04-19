@@ -42,3 +42,7 @@ function estimateReturn(eR, mI, aGR, fundName) {
         handleLogRender(totalReturn, term, initialInv, eR, fundName)
     }
 };
+
+function renderEstimate(totalReturn) {
+    estimationResult.textContent = `~$${totalReturn}`
+};
