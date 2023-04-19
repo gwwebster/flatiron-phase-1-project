@@ -28,3 +28,25 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.form p {
+    margin-top: 50px;
+    margin-left: 22%;
+}
+
+p, label {
+    text-align: left;
+    font-size: large;
+}
+
+label {
+    margin-left: 2%;
+}
+
+#term_length {
+    margin-right: 2%;
+}
+
+#estimation {
+    margin-left: 6.4%;
+}
