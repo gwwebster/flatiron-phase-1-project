@@ -58,3 +58,14 @@ function handleLogRender(totalReturn, term, initialInv, eR, fundName) {
     searchLog.appendChild(li)
     li.addEventListener('mouseenter', handleMouse)
 };
+
+//Event listener for highlighting estimated return in search log
+function handleMouse() {
+    this.querySelector('.returns').style.background = '#ADD8E6'
+    this.querySelector('.returns').style.color = 'black'
+    this.addEventListener('mouseleave', () => {
+        this.querySelector('.returns').style.background = ''
+        this.querySelector('.returns').style.color = ''
+    })
+
+};
