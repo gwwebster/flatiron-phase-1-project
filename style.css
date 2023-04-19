@@ -6,3 +6,10 @@
     justify-content: center;
     text-align: center;
 }
+
+#light_dark {
+    display: flex;
+    justify-content: right;
+    margin-top: -55px;
+    margin-right: 35px;
+}
