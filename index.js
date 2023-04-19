@@ -46,3 +46,15 @@ function estimateReturn(eR, mI, aGR, fundName) {
 function renderEstimate(totalReturn) {
     estimationResult.textContent = `~$${totalReturn}`
 };
+
+// Append search result to search log list
+function handleLogRender(totalReturn, term, initialInv, eR, fundName) {
+    let li = document.createElement('li')
+    li.innerHTML = `<p>Fund: ${fundName}</p>
+    <p>Estimated Return: <span class="returns">$${totalReturn}</span></p>
+    <p>Term Length: ${term} years</p>
+    <p>Initial Investment: $${initialInv}</p>
+    <p>Expense Ratio: ${Number(eR) * 100}%</p>`
+    searchLog.appendChild(li)
+    li.addEventListener('mouseenter', handleMouse)
+};
