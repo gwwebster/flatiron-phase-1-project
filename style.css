@@ -52,11 +52,16 @@ label {
 }
 
 ul {
-    margin-left: 22%;
+    display: inline-block;
     text-align: left;
     list-style: none;
 }
 
 li {
-    margin-top: 5%;
+    margin-bottom: 10%;
+
+}
+.highlighted {
+    background-color: #ADD8E6;
+    color: black;
 }

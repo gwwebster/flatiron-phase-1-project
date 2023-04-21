@@ -61,30 +61,27 @@ function handleLogRender(totalReturn, term, initialInv, eR, fundName) {
 
 //Event listener for highlighting estimated return in search log
 function handleMouse() {
-    this.querySelector('.returns').style.background = '#ADD8E6'
-    this.querySelector('.returns').style.color = 'black'
+    this.querySelector('.returns').classList.add('highlighted')
     this.addEventListener('mouseleave', () => {
-        this.querySelector('.returns').style.background = ''
-        this.querySelector('.returns').style.color = ''
+        this.querySelector('.returns').classList.remove('highlighted')
     })
-
 };
 
 //light/dark mode
 lightDark.addEventListener('click', changeColor)
 
 function changeColor() {
-    (function(exports) {
+    (function (window) {
         let style = document.querySelector("head")
-        .appendChild(document.createElement("style"));
+        .appendChild(document.createElement("style"))
 
-        let styleSheet = document.styleSheets[document.styleSheets.length - 1];
-        styleSheet.insertRule("* {}", 0);
-        styleSheet.insertRule('.form {}', 1);
-        styleSheet.insertRule('select, button, input {}', 2);
+        let styleSheet = document.styleSheets[document.styleSheets.length - 1]
+        styleSheet.insertRule("* {}", 0)
+        styleSheet.insertRule('.form {}', 1)
+        styleSheet.insertRule('select, button, input {}', 2)
 
-        exports.universal = styleSheet.cssRules;
-      }(window));
+        window.universal = styleSheet.cssRules
+      })(window);
     if (lightDark.querySelector('button').textContent === "Dark") {
         window.universal[0].style.backgroundColor = 'black'
         window.universal[0].style.color = 'white'

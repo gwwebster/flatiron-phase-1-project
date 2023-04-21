@@ -12,7 +12,6 @@ to discuss what you would like to change.
 
 ## Author
 George Webster
-github.com/gwwebster
 
 ## References
 1 https://www.nerdwallet.com/article/investing/how-to-invest-in-index-funds
