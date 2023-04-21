@@ -19,27 +19,24 @@ function handleFetch() {
     .then(funds => {
         funds.forEach(fund => {
             if (fund.symbol === fundDropdown.value) {
-                let eR = Number(fund.ER)
-                let mI = Number(fund.MI)
-                let aGR = Number(fund.AGR)
-                let fundName = fund.name
-                estimateReturn(eR, mI, aGR, fundName)
+                let searchFund = fund
+                estimateReturn(searchFund)
             }
         })
     })
 };
 
 // estimate return
-function estimateReturn(eR, mI, aGR, fundName) {
+function estimateReturn(searchFund) {
     let initialInv = Number(form.querySelector('#initial_investment').value)
     let term = Number(form.querySelector('#term_length').value)
-    if (initialInv < mI) {
-        alert(`Initial investment less than minimum investment of ${mI} for the selected fund. Please try again.`)
+    if (initialInv < Number(searchFund.MI)) {
+        alert(`Initial investment less than minimum investment of $${searchFund.MI} for the selected fund. Please try again.`)
     } else {
-        let grossReturn = initialInv + (initialInv * (((1 + aGR)**term) - 1))
-        let totalReturn = Math.floor(grossReturn - ((initialInv * eR) * term))
+        let grossReturn = initialInv + (initialInv * (((1 + Number(searchFund.AGR))**term) - 1))
+        let totalReturn = Math.floor(grossReturn - ((initialInv * Number(searchFund.ER) * term)))
         renderEstimate(totalReturn)
-        handleLogRender(totalReturn, term, initialInv, eR, fundName)
+        handleLogRender(totalReturn, term, initialInv, searchFund)
     }
 };
 
@@ -48,13 +45,13 @@ function renderEstimate(totalReturn) {
 };
 
 // Append search result to search log list
-function handleLogRender(totalReturn, term, initialInv, eR, fundName) {
+function handleLogRender(totalReturn, term, initialInv, searchFund) {
     let li = document.createElement('li')
-    li.innerHTML = `<p>Fund: ${fundName}</p>
+    li.innerHTML = `<p>Fund: ${searchFund.name}</p>
     <p>Estimated Return: <span class="returns">$${totalReturn}</span></p>
     <p>Term Length: ${term} years</p>
     <p>Initial Investment: $${initialInv}</p>
-    <p>Expense Ratio: ${Number(eR) * 100}%</p>`
+    <p>Expense Ratio: ${Number(searchFund.ER) * 100}%</p>`
     searchLog.appendChild(li)
     li.addEventListener('mouseenter', handleMouse)
 };
